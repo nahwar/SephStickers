@@ -1,0 +1,2 @@
+# SephStickers
+Stickers de mierda
