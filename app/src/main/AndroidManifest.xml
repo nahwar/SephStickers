@@ -1,48 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.samplestickerapp">
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="2.0 - En tu cola van mis Huevos"
+    android:compileSdkVersion="28"
+    android:compileSdkVersionCodename="9"
+    package="com.sephiroth1993.mystickers"
+    platformBuildVersionCode="28"
+    platformBuildVersionName="9">
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="28" />
 
     <application
-        android:name=".StickerApplication"
+        android:theme="@ref/0x7f100006"
+        android:label="@ref/0x7f0f002b"
+        android:icon="@ref/0x7f0d0000"
+        android:name="com.example.samplestickerapp.StickerApplication"
+        android:debuggable="true"
         android:allowBackup="false"
-        android:fullBackupContent="false"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".EntryActivity">
+        android:fullBackupContent="false"
+        android:roundIcon="@ref/0x7f0d0003"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+
+        <activity
+            android:name="com.example.samplestickerapp.EntryActivity">
+
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action
+                    android:name="android.intent.action.MAIN" />
+
+                <category
+                    android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".StickerPackListActivity" />
+
         <activity
-            android:name=".StickerPackDetailsActivity"
-            android:parentActivityName=".StickerPackListActivity"
-            tools:ignore="UnusedAttribute">
+            android:name="com.example.samplestickerapp.StickerPackListActivity" />
+
+        <activity
+            android:name="com.example.samplestickerapp.StickerPackDetailsActivity"
+            android:parentActivityName="com.example.samplestickerapp.StickerPackListActivity">
+
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.samplestickerapp.StickerPackListActivity" />
         </activity>
+
         <activity
-            android:name=".StickerPackInfoActivity"
-            android:label="@string/title_activity_sticker_pack_info"
-            android:parentActivityName=".StickerPackDetailsActivity"
-            tools:ignore="UnusedAttribute">
+            android:label="@ref/0x7f0f0046"
+            android:name="com.example.samplestickerapp.StickerPackInfoActivity"
+            android:parentActivityName="com.example.samplestickerapp.StickerPackDetailsActivity">
+
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.samplestickerapp.StickerPackDetailsActivity" />
         </activity>
 
         <provider
-            android:name=".StickerContentProvider"
-            android:authorities="${contentProviderAuthority}"
+            android:name="com.example.samplestickerapp.StickerContentProvider"
+            android:readPermission="com.whatsapp.sticker.READ"
             android:enabled="true"
             android:exported="true"
-            android:readPermission="com.whatsapp.sticker.READ" />
+            android:authorities="com.sephiroth1993.mystickers.stickercontentprovider" />
     </application>
 </manifest>
