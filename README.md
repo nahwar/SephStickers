@@ -1,3 +1,3 @@
 # SephStickers
 
-Stickers de mierda para tu telefono ♥
+Stickers de mierda para tu telefonito ♥
